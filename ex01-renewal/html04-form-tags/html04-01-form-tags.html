@@ -10,7 +10,58 @@
     <h1>회원 가입 폼</h1>
 
     <!-- 가상의 멤버십 서비스를 가정하고 가입 폼을 만들어 봅시다 -->
+    <form action="#" method="POST">
+        <!-- 
+            action : 입력된 데이터를 전송할 서버의 페이지(주소)
+            기본값 자기 자신
+            method : 입력된 데이터를 전송할 방법 (GET, POST)
+            기본값 GET
+         -->
+         <fieldset>
+            <legend>회원정보</legend>
 
+            <label for="username">사용자 이름:</label>
+            <input type="text" name="username" id="username" required /><br>
+            <label for="email">사용자 이메일:</label>
+            <input type="text" name="email" id="email" required /><br />
+            <label for="password">비밀번호:</label>
+            <input type="password" name="password" id="password" required /><br>
+
+            <label for="password_confirm">비밀번호 확인:</label>
+            <input type="password" name="password_confirm" id="password_confirm" required /><br>
+
+            <label>성별</label>
+            <input type="radio" name="gender" id="male" value="M" checked>
+            <label for="male">남성</label>
+            <input type="radio" name="gender" id="female" value="F">
+            <label for="male">여성</label><br>
+
+            <label>선호음료</label>
+            <input type="checkbox" name="fav" id="am" value="am">
+            <label for="am">아메리카노</label>
+            <input type="checkbox" name="fav" id="lt" value="lt">
+            <label for="lt">라떼</label><br>
+            
+            <label>통신사</label>
+            <select name="telecom">
+                <option value="S" selected>SKT</option>
+                <option value="K">KT</option>
+                <option value="L">LG</option>
+                <option value="E">기타</option>
+            </select><br>
+            
+            
+            <textarea cols="80" rows="10"></textarea><br>
+
+            <input type="checkbox" name="terms" id="terms" required>
+            <label for="terms">이용 약관에 동의합니다.
+            </label><br>
+
+            <input type="submit" value="가입하기">
+            <button type="reset">다시 작성</button>
+         </fieldset> 
+    </form>
+    
 </body>
 
 </html>
