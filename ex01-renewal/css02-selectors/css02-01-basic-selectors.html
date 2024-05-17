@@ -4,7 +4,42 @@
 <head>
     <title>CSS 선택자 예제</title>
 </head>
-
+    <style>
+       /* 전체 선택자 : 모든 HTML 요소를 선택 */
+       * {
+        color: gray;
+       }
+       h1 {
+        color: rgb(63, 167, 106);
+       }
+       #apple {
+        color: red;
+       }
+       #banana{
+        color: yellow;
+       }
+       #orange{
+        color: orange;
+       }
+       #grape{
+        color: purple;
+       }
+       /* 클래스 선택자 : class 속성에 명시된 이름으로 요소 선택
+        class : 문서 내에 여러 요소가 가질 수 있고
+        하나의 요소는 여러 개의 class를 가질 수 있다. */
+       .selected {
+        text-decoration: underline;
+       }
+       /* 여러 개의 선택자들 동시 지정 */
+       h1, li{
+        background-color: black;
+       }
+       /* 작업 중인 스타일 솏성을 원래대로 초기화 할 떄
+            : initial */
+       li{
+        background-color: initial;
+       }
+    </style>
 <body>
     <h1>기본 선택자</h1>
 
