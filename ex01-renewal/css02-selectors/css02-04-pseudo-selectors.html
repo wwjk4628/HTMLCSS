@@ -3,6 +3,26 @@
 
 <head>
     <title>CSS 가상 클래스 실습</title>
+    <style>
+        /* 순서 유의 */
+        a:link { color: blue; }
+        a:visited { color: grey; font-weight: bold;}
+        a:hover { color: red; }
+        a:active { color: blue; }
+
+        /* 상태 선택자: 입력 양식의 상태에 따라 발생하는 선택자 */
+        input:focus{background-color: orange;}
+        input:enabled{background-color: white;}
+        input:disabled{background-color: gray;}
+        input[type=":checkbox"]:checked+label {
+            color: red;
+        }
+ 
+        ul#list > li:nth-child(2n){color: green;}
+        ul#list > li:nth-child(2n+1){color: aquamarine;}
+        ul#list > li:first-child{color: red;}
+        ul#list > li:last-child{color: blue;}
+    </style>
 </head>
 
 <body>
