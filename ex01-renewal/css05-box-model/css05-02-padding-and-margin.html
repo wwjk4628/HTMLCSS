@@ -4,18 +4,57 @@
 <head>
     <title>CSS Box Model 실습</title>
     <style>
-        div{
-            margin: 4px;
-            border: 4px solid black;
+        *{
+            margin: 0;
+            padding: 0;
         }
+        div{
+            display: flex;
+            width: 200px;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+        /* padding 속성: 내부 간격 */
         .padding-box{
-            padding: 10px;
+            background-color: pink;
+            border: 1px solid black;
+            /* 값 1개: 4방향 모두 같은 값
+            padding: 100px;
+            
+            방향 접미사를 활용, 개별 간격 적용
+            padding-top: 40px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 40px; 
+
+            값이 4개: top right bottom left
+            padding: 10px 20px 30px 40px;
+            
+            값이 2개 : top-bottom right-left*/
+            padding: 10px 20px;
         }
         .margin-box{
+            background-color: lightgreen;
+            border: 2px dotted green; 
+
+            /* 값이 1개: 4방향 모두 같은 간격 */
             margin: 10px;
+
+            /* 방향 접미사 활용, 개별 간격 적용 */
+            margin-top: 40px;
+            margin-right: 20px;
+            margin-bottom: 30px;
+            margin-left: 40px; 
+            
+            /* 값이 4개: top right bottom left */
+            margin: 10px 20px 30px 40px;
+
+            /* 값이 2개 : top-bottom right-left */
+            margin: 10px 20px;
         }
         .bottom-box{
-            padding-bottom: 10px;
+            background-color: blue;
         }
     </style>
 </head>

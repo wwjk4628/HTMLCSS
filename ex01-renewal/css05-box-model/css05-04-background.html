@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1 user-scalable=no,">
 <head>
     <title>CSS background 실습</title>
+    <style>
+        body{
+            background-image: url(../images/background.jpg);
+        }
+        body{
+            background-size: 50%;
+            /* background-size: 100%; */
+            /* background-size: 100% 200px; */
+        }
+        body{
+            background-repeat: no-repeat;
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+            background-attachment: fixed;
+            background-position: right;
+        }
+        body{
+            /* background-image: url(../images/background.jpg);
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: lightgray; */
+        }
+        body{
+            background: url(../images/background.jpg) center / 100% no-repeat fixed lightgray;
+            font-size: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>CSS background 실습</h1>
-    <p>배경을 지정하는 CSS 속성</p>
+        <h1>CSS background 실습</h1>
+        <p>배경을 지정하는 CSS 속성</p>
 
-    <ul>
-        <li>background-image</li>
-        <li>background-size</li>
-        <li>background-repeat</li>
-        <li>background-position</li>
-    </ul>
+        <ul>
+            <li>background-image</li>
+            <li>background-size</li>
+            <li>background-repeat</li>
+            <li>background-position</li>
+        </ul>  
 </body>
 
 </html>
