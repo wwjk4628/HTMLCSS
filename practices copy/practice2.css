@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Malgun Gothic", "Dotum", sans-serif;
+    font-size: 0.75em;
+    color: #333;
+}
+
+ul{
+    margin-left: 20px;
+    
+
+}
+li{
+    list-style: none;
+    list-style-image: url(images/bullet11.jpg);
+    list-style-position: 0.8px;
+    
+    padding: 2px 10px;
+}

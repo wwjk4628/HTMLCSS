@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Malgun Gothic", "Dotum", sans-serif;
+    font-size: 0.75em;
+    color: #333;
+}
+.tbl-ex{
+    margin: 10px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-left: none;
+    border-right: none;
+}
+th{
+    font-size: 1.1em;
+    border: 2px solid black;
+    border-left: none;
+    border-right: none;
+    background-color: gray;
+    padding: 8px;
+    color: white;
+
+}
+td{
+    border: 1px dotted black;
+    border-left: none;
+    border-right: none;
+    padding: 8px;
+
+}
+tr:nth-child(2n+1){
+    background-color: lightpink;
+}
+
+tr:hover{
+    background-color: orange;
+}
