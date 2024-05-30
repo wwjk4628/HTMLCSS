@@ -3,6 +3,79 @@
 
 <head>
     <title>가입 폼 실습</title>
+    <script>
+        window.addEventListener("load", event => {
+            // registerForm을 찾아서 검증 이벤트 연결
+            // const frm = document.getElementById("registerForm");
+            // const frm = document.forms[0];
+            const frm = document.forms["registerForm"];
+
+            frm.addEventListener("submit", event => {
+                // 기본 기능을 막아둔다
+                event.preventDefault();
+
+                // 사용자 이름 검증
+                if (frm.username.value.trim() === "") {
+                    alert("사용자 이름을 입력해주세요")
+                    frm.username.focus();
+                    return;
+                }
+                // 사용자 이메일 검증
+                if (frm.email.value.trim() === "") {
+                    alert("이메일이 입력되지 않았습니다.")
+                    frm.email.focus();
+                    return;
+                }
+
+                if (frm.password.value === "") {
+                    alert("비밀번호가 설정하지 않았습니다.")
+                    frm.password.focus();
+                    return;
+                }
+
+                if (frm.password_confirm.value.trim() === ""){
+                    alert("확인 비밀번호를 설정하지 않았습니다")
+                    frm.password_confirm.focus();
+                    return;
+                }
+                
+                if (frm.password.value.trim() !== frm.password_confirm.value.trim()) {
+                    alert("비밀번호가 다릅니다.")
+                    frm.password_confirm.focus();
+                    return;
+                }
+
+                // radio 상자의 선택된 값 확인
+                let message = frm.gender.value === 'M' ? "남성": "여성";
+                console.log(message);
+
+                // checkbox : 
+                // 가정: 최소 1개의 체크박스가 선택되어 있어야 한다
+                let checkedCnt = 0;
+                for (let i = 0; i < frm.fav.length; i++){
+                    if (frm.fav[i].checked) {
+                        checkedCnt++;
+                    }
+                }
+                if (checkedCnt === 0) {
+                    alert("최소 음료 1개는 선택해야 합니다.");
+                    return;
+                }
+                console.log(frm.telecom);
+                console.log(frm.telecom.value);
+                console.log(`${frm.telecom.options[frm.telecom.selectedIndex].value}을 선택하셨습니다.`);
+
+                if (!frm.terms.checked) {
+                    alert("이용약관에 동의하세요.");
+                    return;
+                }
+
+                frm.submit();
+            });
+
+            // console.log(frm);
+        })
+    </script>
 </head>
 
 <body>
@@ -10,25 +83,25 @@
     <h1>회원 가입 폼</h1>
 
     <!-- 가상의 멤버십 서비스를 가정하고 가입 폼을 만들어 봅시다 -->
-    <form action="#" method="POST">
+    <form name="registerForm" id="registerForm" action="#" method="POST">
         <!-- 
             action : 입력된 데이터를 전송할 서버의 페이지(주소)
             기본값 자기 자신
             method : 입력된 데이터를 전송할 방법 (GET, POST)
             기본값 GET
          -->
-         <fieldset>
+        <fieldset>
             <legend>회원정보</legend>
 
             <label for="username">사용자 이름:</label>
-            <input type="text" name="username" id="username" required /><br>
+            <input type="text" name="username" id="username" /><br>
             <label for="email">사용자 이메일:</label>
-            <input type="text" name="email" id="email" required /><br />
+            <input type="text" name="email" id="email" /><br />
             <label for="password">비밀번호:</label>
-            <input type="password" name="password" id="password" required /><br>
+            <input type="password" name="password" id="password" /><br>
 
             <label for="password_confirm">비밀번호 확인:</label>
-            <input type="password" name="password_confirm" id="password_confirm" required /><br>
+            <input type="password" name="password_confirm" id="password_confirm" /><br>
 
             <label>성별</label>
             <input type="radio" name="gender" id="male" value="M" checked>
@@ -41,7 +114,7 @@
             <label for="am">아메리카노</label>
             <input type="checkbox" name="fav" id="lt" value="lt">
             <label for="lt">라떼</label><br>
-            
+
             <label>통신사</label>
             <select name="telecom">
                 <option value="S" selected>SKT</option>
@@ -49,19 +122,19 @@
                 <option value="L">LG</option>
                 <option value="E">기타</option>
             </select><br>
-            
-            
+
+
             <textarea cols="80" rows="10"></textarea><br>
 
-            <input type="checkbox" name="terms" id="terms" required>
+            <input type="checkbox" name="terms" id="terms">
             <label for="terms">이용 약관에 동의합니다.
             </label><br>
 
             <input type="submit" value="가입하기">
             <button type="reset">다시 작성</button>
-         </fieldset> 
+        </fieldset>
     </form>
-    
+
 </body>
 
 </html>
